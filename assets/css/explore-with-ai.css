@@ -1,0 +1,31 @@
+/**
+ * Explore with AI - Minimal Styles
+ */
+
+.explore-with-ai-container {
+    margin: 20px 0;
+}
+
+.explore-with-ai-label {
+    margin: 0 0 10px 0;
+}
+
+.explore-with-ai-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 600px) {
+    .explore-with-ai-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Hide when printing */
+@media print {
+    .explore-with-ai-container {
+        display: none;
+    }
+}
