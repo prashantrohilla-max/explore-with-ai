@@ -244,7 +244,7 @@ class Explore_With_AI {
             <div class="explore-with-ai-preview">
                 <h2><?php echo esc_html__('Preview', 'explore-with-ai'); ?></h2>
                 <p><?php echo esc_html__('This is how the buttons will appear:', 'explore-with-ai'); ?></p>
-                <?php echo $this->render_buttons(home_url()); ?>
+                <?php echo wp_kses_post($this->render_buttons(home_url())); ?>
             </div>
 
             <div class="explore-with-ai-shortcode">
@@ -367,6 +367,7 @@ class Explore_With_AI {
 
             $url = sprintf($provider['url_template'], $encoded_url);
 
+            /* translators: %s: AI provider name (e.g., ChatGPT, Claude) */
             $output .= sprintf(
                 '<a href="%s" class="explore-with-ai-button explore-with-ai-%s" target="_blank" rel="noopener noreferrer" title="%s">%s</a>',
                 esc_url($url),
